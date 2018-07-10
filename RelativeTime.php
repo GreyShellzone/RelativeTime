@@ -1,8 +1,10 @@
 <?php
 class RelativeTime{
         
-	public static function GetRelativeTime($dateTime){
-
+	public static function GetRelativeTime($dateTime, $timezone){
+		
+		// The RelativeTime will be show according timezone of users
+		date_default_timezone_set($timezone);
 		$result = "";
 		$CurrentDate = date('Y-m-d H:i:s');
 		$CurrentDateToSeconds = (int) strtotime(date($CurrentDate));
